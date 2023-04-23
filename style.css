@@ -1,0 +1,40 @@
+*{margin:0; paDDING:0}
+
+nav{
+    background-color: darkblue;
+    height:50px;
+    justify-content: center;
+    
+}
+#search{
+    font-size: 20px;
+    width:25%;
+    margin-left: 35%;
+}
+#drop{
+    background-color: lightgray;
+    width:25%;
+    text-align: center;
+    margin-left:35%
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+#tile{
+    width: 200px;
+    background-color: lightgray;
+    height:100px;
+    padding: 5px;
+    border-radius: 10%;
+    margin: 5%;
+    font-size: 20px;
+
+
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
