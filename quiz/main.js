@@ -12,6 +12,8 @@ fetch("../data/quiz/tiles.json").then(res=>res.json()).then(data=>{
         titles.forEach(title => {
           if (title.name == quiz_id){
             document.getElementById("title").innerHTML = quiz_id
+            const question = document.createElement("div");
+            question.innerHTML = `<h1>${title.term1}</h1>`
           }
         });
       }
