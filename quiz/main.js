@@ -9,7 +9,7 @@ fetch("../data/quiz/tiles.json")
         document.getElementById("title").innerHTML = quiz_id;
         for( question_term in quiz.term) {
           const question_div = document.createElement("div");
-          question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' id="${question_term.answer}">`;
+          question_div.innerHTML = `<p>${question_term.set.question}</p><br><input type='text' id="${question_term.set.answer}">`;
           document.getElementById("options").append(question_div);
         };
       }

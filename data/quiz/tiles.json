@@ -4,8 +4,11 @@
         "name" : "La famiglia",
         "tags":"Italian",
         "term": {
-            "question": "mother",
-            "answer": "mamma"
+            "set":{
+                "question": "mother",
+                "answer": "mamma"
+            }
+            
         }
     }
     
