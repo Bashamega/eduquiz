@@ -18,7 +18,7 @@ fetch("../data/quiz/tiles.json")
     }
   });
 //answer
-const input = document.querySelectorAll('input'){
+document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("submit").addEventListener('click', ()=>{
     let score ;
     let correct;
@@ -34,4 +34,4 @@ const input = document.querySelectorAll('input'){
     }
     localStorage.setItem('Score', String(score))
   })
-}
+})
