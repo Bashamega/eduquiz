@@ -10,7 +10,7 @@ fetch("../data/quiz/tiles.json")
         const sets = quiz.term;
         for (const question_term of quiz.term) {
           const question_div = document.createElement("div");
-          question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="q_${question_term.id}">`;
+          question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="q_${question_term.answer}">`;
           document.getElementById("options").append(question_div);
         }
       
