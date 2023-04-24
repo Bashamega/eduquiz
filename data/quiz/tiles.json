@@ -3,13 +3,17 @@
     {
         "name" : "La famiglia",
         "tags":"Italian",
-        "term": {
-            "set":{
+        "term": [
+            {
                 "question": "mother",
                 "answer": "mamma"
+            },
+            {
+                "question" : "Father",
+                "answer" : "babba"
             }
             
-        }
+        ]
     }
     
     
