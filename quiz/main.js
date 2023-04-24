@@ -15,7 +15,8 @@ fetch("../data/quiz/tiles.json").then(res=>res.json()).then(data=>{
             title.term.forEach(question =>{
               const question = document.createElement("div");
               question.innerHTML = `<p>${question.question}</p><br><input type='text' id="${question.answer}">`
-            })
+              document.getElementById("options").append(question)
+          })
           }
         });
       }
