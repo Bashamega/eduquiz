@@ -7,7 +7,7 @@ fetch("../data/quiz/tiles.json")
       const quiz = data.find((tile) => tile.name === quiz_id);
       if (quiz) {
         document.getElementById("title").innerHTML = quiz_id;
-        quiz.term.forEach((question) => {
+        for( question in quiz.term) {
           const question_div = document.createElement("div");
           question_div.innerHTML = `<p>${question.question}</p><br><input type='text' id="${question.answer}">`;
           document.getElementById("options").append(question_div);
