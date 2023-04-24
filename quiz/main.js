@@ -4,12 +4,12 @@ function special_fun(){
   const score_ = localStorage.getItem('score')
   document.getElementById('score').innerText = `Score: ${score_}`
 }
+console.log(run)
 if (quiz_id == ""){
   window.location.href = "https://bashamega.github.io/eduquiz/"
 }
-if(localStorage.getItem('played') == 'true'){
-  special_fun()
-}else{
+
+function run(){
     fetch("../data/quiz/tiles.json")
     .then((res) => res.json())
     .then((data) => {
@@ -44,9 +44,11 @@ if(localStorage.getItem('played') == 'true'){
         }
       }
       localStorage.setItem('Score', String(score));
-      localStorage.setItem('played', 'true')
-      window.location.reload()
-      alert(`You got ${correct} out of ${input.length} correct! Your score is ${score}.`);
+      document.getElementById('special').style.visibility = "visible"
+      document.getElementById('container').style.visibility = 'hidden'
+      let question = correct + error
+      document.getElementById(`score: ${correct} / ${question}`)
+      
     })
     document.getElementById('reset').addEventListener('click', ()=>{
       localStorage.clear()
@@ -54,4 +56,4 @@ if(localStorage.getItem('played') == 'true'){
     })
   })
 }
-
+run()

@@ -5,6 +5,7 @@
 .container{
     margin-left: 10%;
     width:80%;
+    visibility: visible;
 }
 .container input, .container button, .container p{
     width:100%;
@@ -17,9 +18,8 @@
 
 }
 #special{
-    margin: 25%;
-    width:50%;
-    height:50%;
+    visibility: hidden;
+    text-align: center;
     background-color: lightgrey;
-    
+
 }
