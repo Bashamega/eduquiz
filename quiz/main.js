@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let correct;
     let error;
     const input = document.querySelectorAll('input')
-    for (var i = 0; i < inputs.length; i++){
+    for (var i = 0; i < input.length; i++){
       if (input[i].value.toLowerCase() == input[i].name.toLowerCase()){
         score + 1
         correct +1
