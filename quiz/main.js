@@ -51,10 +51,7 @@ function run(){
       document.getElementById(`score: ${correct} / ${question}`)
       
     })
-    document.getElementById('reset').addEventListener('click', ()=>{
-      localStorage.clear()
-      window.location.reload()
-    })
+    
   })
 }
 run()

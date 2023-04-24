@@ -3,18 +3,23 @@
     padding: 0;
 }
 .container{
+    margin-top: 5%;
     margin-left: 10%;
     width:80%;
     visibility: visible;
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 10;
 }
 .container input, .container button, .container p{
     width:100%;
     font-size: 20px;
 
 }
-.container button, #special button{
+.container button{
     background-color: blue;
     border: 0;
+    color: white;
 
 }
 #special{
@@ -22,4 +27,8 @@
     text-align: center;
     background-color: lightgrey;
 
+}
+#special button{
+    background-color: blue;
+    width: 100%;
 }
