@@ -1,4 +1,5 @@
 const quiz_id = decodeURI(window.location.href.split("?").pop());
+document.getElementById('title').innerText = quiz_id
 function special_fun(){
   document.getElementById('special').style.visibility = 'visible'
   const score_ = localStorage.getItem('score')
