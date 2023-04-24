@@ -1,10 +1,5 @@
 const quiz_id = decodeURI(window.location.href.split("?").pop());
-document.getElementById('title').innerText = quiz_id
-function special_fun(){
-  document.getElementById('special').style.visibility = 'visible'
-  const score_ = localStorage.getItem('score')
-  document.getElementById('score').innerText = `Score: ${score_}`
-}
+document.querySelector('h1').innerText = quiz_id
 console.log(run)
 if (quiz_id == ""){
   window.location.href = "https://bashamega.github.io/eduquiz/"
@@ -47,8 +42,7 @@ function run(){
       localStorage.setItem('Score', String(score));
       let question = correct + error
 
-      document.getElementById('div').innerHTML = `<div id="special"><h1 id="title_">Completed</h1><p id="score">score: ${correct} / ${question}</p><button id="reset">Take the quiz again</button><a href="https://bashamega.github.io/eduquiz"><br><button>Home</button> </a></div>`
-      document.getElementById('special').style.visibility = "visible"
+      
       document.getElementById('container').style.visibility = 'hidden'
       
       
