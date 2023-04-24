@@ -5,13 +5,33 @@
         "tags":"Italian",
         "term": [
             {
-                "question": "mother",
+                "question": "Mother",
                 "answer": "mamma"
             },
             {
                 "question" : "Father",
-                "answer" : "babba"
-            }
+                "answer" : "papa"
+            },
+            {
+                "question": "Brother",
+                "answer": "Il fratello"
+            },
+            {
+                "question" : "Sister",
+                "answer" : "la sorella"
+            },
+            {
+                "question": "Grandpa",
+                "answer": "nonno"
+            },
+            {
+                "question" : "Grandma",
+                "answer" : "nonna"
+            },
+            {
+                "question" : "Parents",
+                "answer" : "genitori"
+            },
             
         ]
     }
