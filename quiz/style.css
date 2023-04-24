@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin-left: 10%;
+    width:80%;
+}
+.container input, .container button, .container p{
+    width:100%;
+    font-size: 20px;
+
+}
+.container button{
+    background-color: blue;
+    border: 0;
+
+}
+#special{
+    margin: 25%;
+    width:50%;
+    height:50%;
+    background-color: lightgrey;
+    
+}
