@@ -18,18 +18,20 @@ fetch("../data/quiz/tiles.json")
     }
   });
 //answer
-document.getElementById("submit").addEventListener('click', ()=>{
-  let score ;
-  let correct;
-  let error;
-  const input = document.querySelectorAll('input')
-  for (var i = 0; i < inputs.length; i++){
-    if (input[i].value.toLowerCase() == input[i].name.toLowerCase()){
-      score + 1
-      correct +1
-    }else{
-      error +1
+const input = document.querySelectorAll('input'){
+  document.getElementById("submit").addEventListener('click', ()=>{
+    let score ;
+    let correct;
+    let error;
+    const input = document.querySelectorAll('input')
+    for (var i = 0; i < inputs.length; i++){
+      if (input[i].value.toLowerCase() == input[i].name.toLowerCase()){
+        score + 1
+        correct +1
+      }else{
+        error +1
+      }
     }
-  }
-  localStorage.setItem('Score', String(score))
-})
+    localStorage.setItem('Score', String(score))
+  })
+}
