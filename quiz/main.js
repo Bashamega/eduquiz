@@ -46,7 +46,7 @@ function run(){
       localStorage.setItem('Score', String(score));
       let question = correct + error
 
-      document.getElementById('container').innerHTML = `<div id="special"><h1 id="title_">Completed</h1><p id="score">score: ${correct} / ${question}</p><button id="reset">Take the quiz again</button><a href="https://bashamega.github.io/eduquiz"><br><button>Home</button> </a></div>`
+      document.getElementById('special').innerHTML = `<div id="special"><h1 id="title_">Completed</h1><p id="score">score: ${correct} / ${question}</p><button id="reset">Take the quiz again</button><a href="https://bashamega.github.io/eduquiz"><br><button>Home</button> </a></div>`
       document.getElementById('special').style.visibility = "visible"
       document.getElementById('container').style.visibility = 'hidden'
       
