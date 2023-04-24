@@ -24,7 +24,7 @@ document.getElementById("submit").addEventListener('click', ()=>{
   let error;
   const input = document.querySelectorAll('input')
   for (var i = 0; i < inputs.length; i++){
-    if (input[i].value == input[i].name){
+    if (input[i].value.toLowerCase() == input[i].name.toLowerCase()){
       score + 1
       correct +1
     }else{
