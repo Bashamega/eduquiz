@@ -1,40 +1,35 @@
-[
-    
-    {
-        "name" : "La famiglia",
-        "tags":"Italian",
-        "term": [
-            {
-                "question": "Mother",
-                "answer": "mamma"
-            },
-            {
-                "question" : "Father",
-                "answer" : "papa"
-            },
-            {
-                "question": "Brother",
-                "answer": "Il fratello"
-            },
-            {
-                "question" : "Sister",
-                "answer" : "la sorella"
-            },
-            {
-                "question": "Grandpa",
-                "answer": "nonno"
-            },
-            {
-                "question" : "Grandma",
-                "answer" : "nonna"
-            },
-            {
-                "question" : "Parents",
-                "answer" : "genitori"
-            },
-            
+[    
+    {        
+        "name" : "La famiglia",       
+        "tags":"Italian",        
+        "term": [            
+            {                
+                "question": "Mother",                
+                "answer": "mamma"            
+            },            
+            {                
+                "question" : "Father",                
+                "answer" : "papa"            
+            },            
+            {                
+                "question": "Brother",                
+                "answer": "fratello"            
+            },            
+            {                
+                "question" : "Sister",                
+                "answer" : "sorella"            
+            },            
+            {                
+                "question": "Grandpa",                
+                "answer": "nonno"            
+            },            {                
+                "question" : "Grandma",                
+                "answer" : "nonna"            
+            },            
+            {                
+                "question" : "Parents",                
+                "answer" : "genitori"            
+            }        
         ]
     }
-    
-    
 ]
