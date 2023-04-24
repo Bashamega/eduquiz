@@ -11,7 +11,7 @@ fetch("../data/quiz/tiles.json")
           const question_div = document.createElement("div");
           question_div.innerHTML = `<p>${question.question}</p><br><input type='text' id="${question.answer}">`;
           document.getElementById("options").append(question_div);
-        });
+        };
       }
     }
   });
