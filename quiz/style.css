@@ -12,7 +12,7 @@
     font-size: 20px;
 
 }
-.container button{
+.container button, #special button{
     background-color: blue;
     border: 0;
 
