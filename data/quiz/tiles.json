@@ -3,8 +3,8 @@
     {
         "name" : "La famiglia",
         "tags":"Italian",
-        "term1": {
-            "Question": "Mother",
+        "term": {
+            "question": "mother",
             "answer": "mamma"
         }
     }
