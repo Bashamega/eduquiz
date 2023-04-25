@@ -1,5 +1,6 @@
+let quiz_id
 if (window.location.href.includes("?")){
-  const quiz_id = decodeURI(window.location.href.split("?").pop());
+  quiz_id = decodeURI(window.location.href.split("?").pop());
   if (document.getElementById('title')){
     document.getElementById('title').innerHTML = `<h1>${quiz_id}</h1>`
   }
