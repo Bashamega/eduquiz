@@ -1,7 +1,8 @@
 [    
     {        
         "name" : "La famiglia",       
-        "tags":"Italian",        
+        "tags":"Italian", 
+        "lang": "en",       
         "term": [            
             {                
                 "question": "Mother",                
@@ -35,6 +36,7 @@
     {
         "name": "VERBO (ESSERE)",
         "tags": "Italian",
+        "lang": "it",
         "term": [
             {
                "question" : "Io",

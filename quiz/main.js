@@ -8,7 +8,13 @@ if (window.location.href.includes("?")){
 }
 
 
+function speak(value){
+  responsiveVoice.speak(value);
 
+}
+if(document.getSelection){
+  speak(document.getSelection().toString())
+}
 function run(){
     const quiz_id = decodeURI(window.location.href.split("?").pop());
     document.getElementById('title_').innerText = `Quiz - ${quiz_id}`
@@ -19,10 +25,10 @@ function run(){
         const quiz = data.find((tile) => tile.name === quiz_id);
         if (quiz) {
           const sets = quiz.term;
-          for (const question_term of quiz.term) {
+          for (const question_term of quiz.term.question) {
             const question_div = document.createElement("div");
             question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="q_${question_term.answer}">`;
-            document.getElementById("options").append(question_div);
+            document.getElementById("options").append(question_div)
           }
         
         }
@@ -63,3 +69,4 @@ function run(){
 
 console.log(run);
 run();
+
