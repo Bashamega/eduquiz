@@ -2,7 +2,7 @@ var tag = 'none';
 if (window.location.href.includes("?")){
   tag = decodeURI(window.location.href.split("?").pop());
   document.getElementById('title_tag').innerText = `Tag - ${tag}`
-  document.getElementById("title").innerText = 'Tag: ' + tag
+  document.getElementById("title").innerText = `Tag - ${tag}`
 }else{
   window.location.href = "https://bashamega.github.io/eduquiz/"
 }
