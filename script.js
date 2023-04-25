@@ -55,7 +55,7 @@ fetch("data/quiz/tiles.json")
       titles.forEach(title => {
         const div = document.createElement("div")
         div.id = "tile"
-        div.innerHTML = `<a href="quiz?${title.name}"<heading>${title.name}</heading><br></a><a href="quiz?${title.tags}"><div id='tag'>${title.tags}</div></a>`
+        div.innerHTML = `<a href="quiz?${title.name}"<heading>${title.name}</heading><br></a><a href="tag?${title.tags}"><div id='tag'>${title.tags}</div></a>`
         document.getElementById('container').append(div)
         
       });
