@@ -49,3 +49,10 @@ a{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+#tag{
+    background-color: rgb(110, 110, 215);
+    width:20px;
+    height: 10px;
+    text-align: center;
+    margin-right: 10px;
+}

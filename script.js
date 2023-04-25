@@ -58,10 +58,10 @@ fetch("data/quiz/tiles.json")
         div.innerHTML = `<a href="quiz?${title.name}"<heading>${title.name}</heading><br></a><div id='tags'></div>`
         document.getElementById('container').append(div)
         for (i in title.tags){
-          const tagDiv = document.getElementById('tags')
           const div_ = document.createElement('span')
           div_.id = "tag"
           div_.innerHTML = `<a href='tag?${title.tag}'><p>${title.tag}</p></a>`
+          document.getElementById('tags').append(div_)
         }
         
       });
