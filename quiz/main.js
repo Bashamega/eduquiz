@@ -8,7 +8,6 @@ if (window.location.href.includes("?")){
 }
 
 console.log("run")
-const quiz_id = decodeURI(window.location.href.split("?").pop());
 document.getElementById('title_').innerText = `Quiz - ${quiz_id}`
 fetch("../data/quiz/tiles.json")
   .then((res) => res.json())
