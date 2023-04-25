@@ -20,10 +20,13 @@ function run() {
         if (quiz) {
           const sets = quiz.term;
           document.getElementById("options").innerHTML = "";
-          for (const question_term of Array.isArray(sets.question) ? sets.question : [sets.question]) {
-            const question_div = document.createElement("div");
-            question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="${question_term.answer}">`;
-            document.getElementById("options").append(question_div)
+          for (const question_term of Array.isArray(sets.question)){
+            if(question_term == Array.isArray(sets.question)){
+              const question_div = document.createElement("div");
+              question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="${question_term.answer}">`;
+              document.getElementById("options").append(question_div)
+            }
+            
           }          
 
         }
@@ -39,7 +42,7 @@ function run() {
     let correct = 0;
     let error = 0;
     for (var i = 0; i < input.length; i++) {
-      const answer = input[i].name.replace('q_', '');
+      const answer = input[i].name
       if (input[i].value.toLowerCase() == answer.toLowerCase()) {
         score++;
         correct++;
