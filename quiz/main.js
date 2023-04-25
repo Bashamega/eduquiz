@@ -1,9 +1,13 @@
-const quiz_id = decodeURI(window.location.href.split("?").pop());
-document.querySelector('h1').innerText = quiz_id;
-
-if (quiz_id == ""){
+if (window.location.href.includes("?")){
+  const quiz_id = decodeURI(window.location.href.split("?").pop());
+  if (document.getElementById('title')){
+    document.getElementById('title').innerHTML = `<h1>${quiz_id}</h1>`
+  }
+}else{
   window.location.href = "https://bashamega.github.io/eduquiz/"
 }
+
+
 
 function run(){
     fetch("../data/quiz/tiles.json")
@@ -21,6 +25,8 @@ function run(){
           }
         
         }
+      }else{
+        window.location.href = "https://bashamega.github.io/eduquiz/"
       }
     });
 
