@@ -22,7 +22,7 @@ fetch("../data/quiz/tiles.json")
         const sets = quiz.term;
         document.getElementById("options").innerHTML = "";
         for (question_term of sets){
-          console(question_term)
+          console.log(question_term)
           if(question_term == Array.isArray(sets.question)){
             console.log(true)
             const question_div = document.createElement("div");
