@@ -17,7 +17,6 @@ function run(){
       if (Array.isArray(data) && data.length > 0) {
         const quiz = data.find((tile) => tile.name === quiz_id);
         if (quiz) {
-          document.getElementById("title").innerHTML = quiz_id;
           const sets = quiz.term;
           for (const question_term of quiz.term) {
             const question_div = document.createElement("div");
@@ -50,6 +49,12 @@ function run(){
 
       
       document.getElementById('container').style.visibility = 'hidden'
+      const div = document.createElement('div');
+      div.id = "congrats"
+      let heading = 0;
+      
+      div.innerHTML = `<h1>Done</h1><br><h2>Score: ${correct} / ${question}<br><a href="https://bashamega.github.io/eduquiz/"<button>Home</button></a>`
+      document.body.append(div)
       
     })
 }
