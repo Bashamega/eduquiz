@@ -11,6 +11,7 @@ if (window.location.href.includes("?")){
 
 function run(){
     const quiz_id = decodeURI(window.location.href.split("?").pop());
+    document.getElementById('title').innerText = `Quiz - ${quiz_id}`
     fetch("../data/quiz/tiles.json")
     .then((res) => res.json())
     .then((data) => {
@@ -53,7 +54,7 @@ function run(){
       div.id = "congrats"
       let heading = 0;
       
-      div.innerHTML = `<h1>Done</h1><br><h2>Score: ${correct} / ${question}<br><a href="https://bashamega.github.io/eduquiz/"<button>Home</button></a>`
+      div.innerHTML = `<h1>Done</h1><br><h2>Score: ${correct} / ${question}|</h2><br><a href="https://bashamega.github.io/eduquiz/"<button>Home</button></a>`
       document.body.append(div)
       
     })
