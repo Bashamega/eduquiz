@@ -33,16 +33,10 @@ function run(){
 
     document.getElementById("submit").addEventListener('click', ()=>{
       const input = document.querySelectorAll('input')
-      for (var i = 0; i < input.length; i++){
-        if (input[i] ==''){
-          alert("You missed a question")
-
-        }
-      }
+      
       let score = 0;
       let correct = 0;
       let error = 0;
-      const input = document.querySelectorAll('input')
       for (var i = 0; i < input.length; i++){
         const answer = input[i].name.replace('q_', '');
         if (input[i].value.toLowerCase() == answer.toLowerCase()){
