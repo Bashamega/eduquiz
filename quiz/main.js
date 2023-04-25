@@ -21,7 +21,7 @@ fetch("../data/quiz/tiles.json")
         console.log(true)
         const sets = quiz.term;
         document.getElementById("options").innerHTML = "";
-        for (const question_term of sets){
+        for (question_term of sets){
           console(question_term)
           if(question_term == Array.isArray(sets.question)){
             console.log(true)
