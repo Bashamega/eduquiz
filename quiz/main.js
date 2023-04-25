@@ -11,7 +11,7 @@ if (window.location.href.includes("?")){
 
 function run(){
     const quiz_id = decodeURI(window.location.href.split("?").pop());
-    document.getElementById('title').innerText = `Quiz - ${quiz_id}`
+    document.getElementById('title_').innerText = `Quiz - ${quiz_id}`
     fetch("../data/quiz/tiles.json")
     .then((res) => res.json())
     .then((data) => {
