@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    position: relative;
+}
 .container{
     margin-top: 5%;
     margin-left: 10%;
@@ -22,13 +25,20 @@
     color: white;
 
 }
-#special{
-    visibility: hidden;
-    text-align: center;
-    background-color: lightgrey;
 
-}
-#special button{
+#congrats button{
     background-color: blue;
     width: 100%;
+}
+#congrats{
+    position: fixed;
+    margin: 10%;
+    width: 80%;
+    height:80%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10%;
 }
