@@ -1,4 +1,4 @@
-let quiz_id
+let quiz_id = 0;
 if (window.location.href.includes("?")){
   quiz_id = decodeURI(window.location.href.split("?").pop());
   if (document.getElementById('title')){
