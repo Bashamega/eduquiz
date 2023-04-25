@@ -31,5 +31,41 @@
                 "answer" : "genitori"            
             }        
         ]
+    },
+    {
+        "name": "VERBO (ESSERE)",
+        "tags": "Italian",
+        "terms": [
+            {
+               "question" : "Io",
+               "answer": "Sono"
+            },
+            {
+                "question" : "Tu",
+                "answer": "sei"
+            },
+            {
+                "question" : "Lui",
+                "answer": "è"
+             },
+             {
+                 "question" : "Lei",
+                 "answer": "è"
+             },
+             {
+                "question" : "Noi",
+                "answer": "siamo"
+             },
+             {
+                 "question" : "Voi",
+                 "answer": "siete"
+             },
+             {
+                "question" : "Loro",
+                "answer": "Sono"
+             }
+             
+            
+        ]
     }
 ]
