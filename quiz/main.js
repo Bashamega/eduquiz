@@ -20,9 +20,9 @@ function run() {
         if (quiz) {
           const sets = quiz.term;
           document.getElementById("options").innerHTML = "";
-          for (const question_term of Array.isArray(quiz.term.question) ? quiz.term.question : [quiz.term.question]) {
+          for (const question_term of Array.isArray(sets.question) ? sets.question : [sets.question]) {
             const question_div = document.createElement("div");
-            question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="q_${question_term.answer}">`;
+            question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="${question_term.answer}">`;
             document.getElementById("options").append(question_div)
           }          
 
