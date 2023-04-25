@@ -8,14 +8,18 @@ if (window.location.href.includes("?")){
 }
 
 function run() {
+  console.log("run")
   const quiz_id = decodeURI(window.location.href.split("?").pop());
   document.getElementById('title_').innerText = `Quiz - ${quiz_id}`
   fetch("../data/quiz/tiles.json")
     .then((res) => res.json())
     .then((data) => {
+      console.log(data)
       if (Array.isArray(data) && data.length > 0) {
         const quiz = data.find((tile) => tile.name === quiz_id);
+        console.log(quiz)
         if (quiz) {
+          console.log(true)
           const sets = quiz.term;
           document.getElementById("options").innerHTML = "";
           for (const question_term of sets){
