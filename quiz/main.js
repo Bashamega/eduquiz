@@ -10,6 +10,7 @@ if (window.location.href.includes("?")){
 
 
 function run(){
+    const quiz_id = decodeURI(window.location.href.split("?").pop());
     fetch("../data/quiz/tiles.json")
     .then((res) => res.json())
     .then((data) => {
