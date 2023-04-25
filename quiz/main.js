@@ -16,22 +16,17 @@ function run(){
     .then((res) => res.json())
     .then((data) => {
       if (Array.isArray(data) && data.length > 0) {
-        const quiz = data.find((tile) => tile.name === quiz_id);
-        if (quiz) {
-          const sets = quiz.term;
-          if (quiz) {
-            const sets = quiz.term;
-            for (const question_term of sets) {
-              const question_div = document.createElement("div");
-              question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="q_${question_term.answer}">`;
-              document.getElementById("options").append(question_div);
-            }
-          }          
-        
+        const sets = data.find((tile) => tile.name === quiz_id)?.term;
+        if (sets && Array.isArray(sets) && sets.length > 0) {
+          for (const question_term of sets) {
+            const question_div = document.createElement("div");
+            question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="q_${question_term.answer}">`;
+            document.getElementById("options").append(question_div);
+          }
+        } else {
+          window.location.href = "https://bashamega.github.io/eduquiz/";
         }
-      }else{
-        window.location.href = "https://bashamega.github.io/eduquiz/"
-      }
+      }      
     });
 
     document.getElementById("submit").addEventListener('click', ()=>{
