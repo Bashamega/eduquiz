@@ -14,6 +14,7 @@ fetch("../data/quiz/tiles.json")
   .then((res) => res.json())
   .then((data) => {
     console.log(data)
+    let done = 0;
     if (Array.isArray(data) && data.length > 0) {
       const quiz = data.find((tile) => tile.name === quiz_id);
       console.log(quiz)
@@ -27,11 +28,13 @@ fetch("../data/quiz/tiles.json")
           question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="${question_term.answer}">`;
           document.getElementById("options").append(question_div);
           console.log("done");
-        }          
+        } 
+        let +1         
       }
     } else {
       window.location.href = "https://bashamega.github.io/eduquiz/"
     }
+    if(done == 0){window.location.href = "https://bashamega.github.io/eduquiz/"}
   });
 
 document.getElementById("submit").addEventListener('click', () => {
