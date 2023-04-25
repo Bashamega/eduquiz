@@ -23,13 +23,10 @@ fetch("../data/quiz/tiles.json")
         document.getElementById("options").innerHTML = "";
         for (question_term of sets){
           console.log(question_term)
-          if (Array.isArray(question_term.question)) {
-            console.log(true);
-            const question_div = document.createElement("div");
-            question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="${question_term.answer}">`;
-            document.getElementById("options").append(question_div);
-            console.log("done");
-          }          
+          const question_div = document.createElement("div");
+          question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="${question_term.answer}">`;
+          document.getElementById("options").append(question_div);
+          console.log("done");
         }          
       }
     } else {
