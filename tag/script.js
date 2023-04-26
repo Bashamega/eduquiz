@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('nav').append(drop)
     let mydata;
-    fetch("https://bashamega.github.io/eduquiz")
+    fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
       .then(res => res.json())
       .then(data=>{
         if (Array.isArray(data) && data.length > 0) {
