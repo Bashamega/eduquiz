@@ -65,8 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
           titles.forEach(title => {
             if (title.name.toLowerCase().includes(value)){
               const tile = document.createElement("div")
-              tile.innerHTML = `<a href = "https://bashamega.github.io/eduquiz/quiz?${title.name}"<heading>${title.name}</heading><a>`
+              tile.innerHTML = `<a href = "quiz?${title.name}"<heading>${title.name}</heading><a>`
               document.getElementById('drop').append(tile)
+            }else{
+              if(title.tags.toLowerCase().includes(value)){
+                const tile = document.createElement("div")
+                tile.innerHTML = `<a href = "quiz?${title.name}"<heading>${title.name}</heading><a>`
+                document.getElementById('drop').append(tile)
+              }
             }
           });
         }
