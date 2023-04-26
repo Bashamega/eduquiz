@@ -8,7 +8,7 @@ if (window.location.href.includes("?")){
   window.location.href = "https://bashamega.github.io/eduquiz/"
 }
 
-document.getElementById('title').innerText = `Study - ${quiz_id}`
+document.getElementById('title_').innerText = `Study - ${quiz_id}`
 fetch("../data/quiz/tiles.json")
   .then((res) => res.json())
   .then((data) => {
