@@ -1,6 +1,6 @@
 [    
     {        
-        "name" : "La famiglia",       
+        "name" : "La Famiglia",       
         "tags":"Italian", 
         "lang": "en",       
         "term": [            
@@ -34,7 +34,7 @@
         ]
     },
     {
-        "name": "VERBO (ESSERE)",
+        "name": "Verbo (ESssere)",
         "tags": "Italian",
         "lang": "it",
         "term": [
@@ -65,6 +65,71 @@
              {
                 "question" : "Loro",
                 "answer": "Sono"
+             }
+             
+            
+        ]
+    },
+    {
+        "name": "YCT 5 - Lesson 1",
+        "tags": "Chinese",
+        "lang": "ch",
+        "term": [
+            {
+               "question" : "功夫",
+               "answer": "Kung Fu"
+            },
+            {
+                "question" : "非常",
+                "answer": "extremely"
+            },
+            {
+                "question" : "特别",
+                "answer": "especially"
+             },
+             {
+                 "question" : "我喜欢帮助别人。",
+                 "answer": "I like to help others"
+             },
+             {
+                "question" : "对。。。感兴趣",
+                "answer": "Be intrested in"
+             },
+             {
+                 "question" : "飞",
+                 "answer": "fly"
+             },
+             {
+                "question" : "当然",
+                "answer": "of course"
+             },
+             {
+                "question": "厉害",
+                "answer": "awesome"
+             },
+             {
+                "question" : "和。。。一样",
+                "answer" : "same as"
+             },
+             {
+                "question": "帮助",
+                "answer": "help"
+             },
+             {
+                "question" : "别人",
+                "answer" : "other people"
+             },
+             {
+                "question": "阿宝",
+                "answer": "po"
+             },
+             {
+                "question" : "我对功夫特别感兴趣。",
+                "answer" : "I am extremely interested in studying Chinese."
+             },
+             {
+                "question" : "我和妈妈一样都喜欢吃鸡肉。",
+                "answer": "I like chicken as same as my mom"
              }
              
             
