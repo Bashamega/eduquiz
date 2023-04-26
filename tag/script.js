@@ -19,12 +19,11 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
         const title_ = tile.name
         return tile;
       });
-      let done = 0;
       titles.forEach(title => {
         if(title.tags ==tag){
           const div = document.createElement("div")
           div.id = "tile"
-          div.innerHTML = `<a href="https://bashamega.github.io/eduquiz/quiz?${title.name}"<heading>${title.name}</heading><br></a><p>Tags:   </p><a href="https://bashamega.github.io/eduquiz/tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
+          div.innerHTML = `<a href="https://bashamega.github.io/eduquiz/quiz?${title.name}" id="check"><heading>${title.name}</heading><br></a><p>Tags:   </p><a href="https://bashamega.github.io/eduquiz/tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
           document.getElementById('container').append(div)
           done +1
         }
@@ -32,11 +31,11 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
         
       });
       console.log(0)
-      if(done ==0){
+      if(document.getElementById('check')){
         window.location.href = "https://bashamega.github.io/eduquiz/"
       }
     }
-  })
+})
 let titles = [];
 document.addEventListener('DOMContentLoaded', function() {
   const inputElement = document.getElementById('search');
