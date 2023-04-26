@@ -14,105 +14,108 @@
     </nav>
     <div class="slideshow-container" id="slide_container">
         <div id="slides"></div>
-        <script>
-            fetch("data/quiz/tiles.json")
-            .then(res=> res.json())
-            .then(data =>{
-                if (Array.isArray(data) && data.length > 0) {
-                titles = data.map(tile=>{
-                    const title_ = tile.name
-                    return tile;
-                });
-                titles.forEach(title => {
-                    const div = document.createElement("div")
-                    div.setAttribute("class", "slide")
-                    div.innerHTML = `<a href="quiz?${title.name}"<heading>${title.name}</heading><br></a><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
-                    document.getElementById('slides').append(div)
-                    
-                });
-                }
-            })
-        </script>
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
         <style>
-            .slideshow-container {
-                margin-top: 5%;
-                position: relative;
-            }
-
-            .slide {
-                display: none;
-                width: 100%;
-                height: auto;
-                text-align: center;
-            }
-
-            .prev,
-            .next {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: auto;
-                padding: 16px;
-                margin-top: -22px;
-                color: white;
-                font-weight: bold;
-                font-size: 18px;
-                transition: 0.6s ease;
-                border-radius: 0 3px 3px 0;
-                user-select: none;
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-
-            .next {
-                right: 0;
-                border-radius: 3px 0 0 3px;
-            }
-
-            .prev:hover,
-            .next:hover {
-                background-color: rgba(0, 0, 0, 0.4);
-            }
-
-            .active {
-                display: block;
-            }
-
+          .slideshow-container {
+            margin-top: 5%;
+            position: relative;
+          }
+      
+          .slide {
+            display: none;
+            width: 100%;
+            height: auto;
+            text-align: center;
+          }
+      
+          .prev,
+          .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.8);
+          }
+      
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
+      
+          .prev:hover,
+          .next:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+          }
+      
+          .active {
+            display: block;
+          }
+      
         </style>
         <script>
-            let slideIndex = 0;
-            showSlides();
-
-            function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            //slides[slideIndex - 1].style.display = "block";
+          let slideIndex = 0;
+      
+          function showSlides() {
+            fetch("data/quiz/tiles.json")
+              .then(res => res.json())
+              .then(data => {
+                if (Array.isArray(data) && data.length > 0) {
+                  const titles = data.map(tile => {
+                    const title_ = tile.name;
+                    const tags_ = tile.tags;
+                    return {
+                      title: title_,
+                      tags: tags_
+                    };
+                  });
+                  const slidesDiv = document.getElementById("slides");
+                  slidesDiv.innerHTML = "";
+                  titles.forEach(title => {
+                    const div = document.createElement("div");
+                    div.setAttribute("class", "slide");
+                    div.innerHTML = `<a href="quiz?${title.title}"<heading>${title.title}</heading><br></a><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`;
+                    slidesDiv.append(div);
+                  });
+                  const slides = slidesDiv.getElementsByClassName("slide");
+                  for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                  }
+                  slides[slideIndex - 1].style.display = "block";
+                }
+              });
             setTimeout(showSlides, 2000); // Change image every 2 seconds
-            }
-
-            let prevButton = document.querySelector(".prev");
-            let nextButton = document.querySelector(".next");
-
-            prevButton.addEventListener("click", () => {
+          }
+      
+          showSlides();
+      
+          const prevButton = document.querySelector(".prev");
+          const nextButton = document.querySelector(".next");
+      
+          prevButton.addEventListener("click", () => {
             slideIndex--;
             showSlides();
-            });
-
-            nextButton.addEventListener("click", () => {
+          });
+      
+          nextButton.addEventListener("click", () => {
             slideIndex++;
             showSlides();
-            });
-
+          });
+      
         </script>
-      </div>
+      </div>      
     <div class="container" id="container">
 
     </div>
