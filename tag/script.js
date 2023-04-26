@@ -2,9 +2,7 @@ var tag = 'none';
 if (window.location.href.includes("?")){
   tag = decodeURI(window.location.href.split("?").pop());
   document.getElementById('title_tag').innerText = `Tag - ${tag}`
-  if(document.getElementById("title")){
-    document.getElementById("title").innerText = `Tag - ${tag}`
-  }
+  
   
 }else{
   window.location.href = "https://bashamega.github.io/eduquiz/"
@@ -30,6 +28,9 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
         
       });
       if(document.getElementById('check')){
+        document.getElementById('title').innerHTML = `<h1>Tags:   ${tag}</h1>`
+        
+      }else{
         window.location.href = "https://bashamega.github.io/eduquiz/"
       }
     }
