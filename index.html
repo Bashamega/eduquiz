@@ -26,7 +26,8 @@
             display: none;
             width: 100%;
             height: auto;
-            text-align: center;           
+            text-align: center;   
+            background-color: lightblue;        
           }
       
           .prev,
@@ -95,7 +96,6 @@
                   }
                   slides[slideIndex - 1].style.display = "block";
                 }
-                slides[slideIndex -1].style.backgroundColor = 'rgb(' + Math.round(Math.random()*255)*Math.round(Math.random()*255)*Math.round(Math.random()*255)*')';
             });
             setTimeout(showSlides, 60000);
           }
