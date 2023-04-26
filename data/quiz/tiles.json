@@ -2,7 +2,7 @@
     {        
         "name" : "La Famiglia",       
         "tags":"Italian", 
-        "activationCode": "wq9-eil-Uz3",
+        
         "lang": "en",       
         "term": [            
             {                
@@ -37,7 +37,7 @@
     {
         "name": "Verbo (Essere)",
         "tags": "Italian",
-        "activationCode": "F26-diS-gSc",
+        
         "lang": "it",
         "term": [
             {
@@ -74,7 +74,7 @@
     },
     {
         "name": "YCT 5 - Lesson 1",
-        "activationCode": "tVL-XG5-bQt",
+        
         "tags": "Chinese",
         "lang": "ch",
         "term": [
@@ -142,7 +142,7 @@
         "name": "YCT 5 - Lesson 2",
         "tags": "Chinese",
         "lang": "ch",
-        "activationCode": "H4U-moY-3dD",
+        
         "term": [
             {
                "question" : "大象",

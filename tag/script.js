@@ -21,7 +21,7 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
         if(title.tags ==tag){
           const div = document.createElement("div")
           div.id = "tile"
-          div.innerHTML = `<a href="https://bashamega.github.io/eduquiz/quiz?${title.name}" id="check"><heading>${title.name}</heading><br></a><p>Activation code: ${title.activationCode}</p><br><p>Tags:   </p><a href="https://bashamega.github.io/eduquiz/tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
+          div.innerHTML = `<a href="https://bashamega.github.io/eduquiz/quiz?${title.name}" id="check"><heading>${title.name}</heading><br></a><br><p>Tags:   </p><a href="https://bashamega.github.io/eduquiz/tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
           document.getElementById('container').append(div)
         }
         
