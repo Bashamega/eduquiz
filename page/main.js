@@ -28,6 +28,7 @@ fetch("../data/quiz/tiles.json")
 
           tr.appendChild(td_question);
           tr.appendChild(td_answer);
+          tr.appendChild(document.createElement('hr'))
           tbody.appendChild(tr);
         }
       }
