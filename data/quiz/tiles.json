@@ -134,5 +134,66 @@
              
             
         ]
+    },
+    {
+        "name": "YCT 5 - Lesson 2",
+        "tags": "Chinese",
+        "lang": "ch",
+        "term": [
+            {
+               "question" : "大象",
+               "answer": "elephant"
+            },
+            {
+                "question" : "兔子",
+                "answer": "rabbit"
+            },
+            {
+                "question" : "蝴蝶",
+                "answer": "butterfly"
+             },
+             {
+                 "question" : "虫子",
+                 "answer": "worm"
+             },
+             {
+                "question" : "矮",
+                "answer": "short"
+             },
+             {
+                 "question" : "胖",
+                 "answer": "fat"
+             },
+             {
+                "question" : "短",
+                "answer": "duan"
+             },
+             {
+                "question": "更",
+                "answer": "even more"
+             },
+             {
+                "question" : "讨厌",
+                "answer" : "dislike"
+             },
+             {
+                "question": "告诉",
+                "answer": "gaosu"
+             },
+             {
+                "question" : "将来",
+                "answer" : "future"
+             },
+             {
+                "question": "长长",
+                "answer": "long"
+             },
+             {
+                "question" : "兔子更可爱。",
+                "answer" : "The  rabbit is cuter"
+             }
+             
+            
+        ]
     }
 ]
