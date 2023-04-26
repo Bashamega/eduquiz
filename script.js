@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('drop').append(tile)
               }
             }
-            
+
           });
         }
       });
   });
 });
-fetch("data/quiz/tiles.json")
+fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
   .then(res=> res.json())
   .then(data =>{
     if (Array.isArray(data) && data.length > 0) {
@@ -54,9 +54,9 @@ fetch("data/quiz/tiles.json")
       titles.forEach(title => {
         const div = document.createElement("div")
         div.id = "tile"
-        div.innerHTML = `<a href="quiz?${title.name}"<heading>${title.name}</heading><br><br></a><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
+        div.innerHTML = `<heading>${title.name}</heading><br><br><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="choice"><a href="page?${title.name}"><button>Study</button></a><a href="quiz?${title.name}"><button >Quiz</button></a></div>`
         document.getElementById('container').append(div)
-        
+
       });
     }
   })

@@ -30,11 +30,16 @@ nav{
     transition-property: transform;
     width: 200px;
     background-color: lightgray;
-    height:100px;
+    height:150px;
     padding: 5px;
     border-radius: 10%;
     margin: 5%;
     font-size: 20px;
+}
+#choice button{
+    margin: 2px;
+    border: 0;
+
 }
 #tile:hover, .hvr-grow:focus, .hvr-grow:active {
     -webkit-transform: scale(1.1);
