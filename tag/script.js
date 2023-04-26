@@ -27,7 +27,7 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
         if(title.tags ==tag){
           const div = document.createElement("div")
           div.id = "tile"
-          div.innerHTML = `<a href="quiz?${title.name}"<heading>${title.name}</heading><br></a><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
+          div.innerHTML = `<a href="https://bashamega.github.io/eduquiz/quiz?${title.name}"<heading>${title.name}</heading><br></a><p>Tags:   </p><a href="https://bashamega.github.io/eduquiz/tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
           document.getElementById('container').append(div)
           done +1
         }
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
           titles.forEach(title => {
             if (title.name.toLowerCase().includes(value)){
               const tile = document.createElement("div")
-              tile.innerHTML = `<a href = "quiz?${title.name}"<heading>${title.name}</heading><a>`
+              tile.innerHTML = `<a href = "https://bashamega.github.io/eduquiz/quiz?${title.name}"<heading>${title.name}</heading><a>`
               console.log(tile)
               document.getElementById('drop').append(tile)
             }
