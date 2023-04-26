@@ -25,12 +25,10 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
           div.id = "tile"
           div.innerHTML = `<a href="https://bashamega.github.io/eduquiz/quiz?${title.name}" id="check"><heading>${title.name}</heading><br></a><p>Tags:   </p><a href="https://bashamega.github.io/eduquiz/tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
           document.getElementById('container').append(div)
-          done +1
         }
         
         
       });
-      console.log(0)
       if(document.getElementById('check')){
         window.location.href = "https://bashamega.github.io/eduquiz/"
       }
