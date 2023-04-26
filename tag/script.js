@@ -16,12 +16,9 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
   .then(data =>{
     if (Array.isArray(data) && data.length > 0) {
       titles = data.map(tile=>{
-        console.log(data)
         const title_ = tile.name
-        console.log(title_)
         return tile;
       });
-      console.log(titles)
       let done = 0;
       titles.forEach(title => {
         if(title.tags ==tag){
@@ -34,7 +31,8 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
         
         
       });
-      if(done = 0){
+      console.log(0)
+      if(done ==0){
         window.location.href = "https://bashamega.github.io/eduquiz/"
       }
     }
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (val ==""){
       throw Error
     }
-    console.log(val);
     const drop = document.createElement("div")
     drop.id="drop"
 
@@ -63,18 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data=>{
         if (Array.isArray(data) && data.length > 0) {
           titles = data.map(tile=>{
-            console.log(data)
             const title_ = tile.name
-            console.log(title_)
             return tile;
           });
-          console.log(titles)
           const value = val.toLowerCase()
           titles.forEach(title => {
             if (title.name.toLowerCase().includes(value)){
               const tile = document.createElement("div")
               tile.innerHTML = `<a href = "https://bashamega.github.io/eduquiz/quiz?${title.name}"<heading>${title.name}</heading><a>`
-              console.log(tile)
               document.getElementById('drop').append(tile)
             }
           });

@@ -8,26 +8,20 @@ if (window.location.href.includes("?")){
   window.location.href = "https://bashamega.github.io/eduquiz/"
 }
 
-console.log("run")
 document.getElementById('title_').innerText = `Quiz - ${quiz_id}`
 fetch("../data/quiz/tiles.json")
   .then((res) => res.json())
   .then((data) => {
-    console.log(data)
     let done = 0;
     if (Array.isArray(data) && data.length > 0) {
       const quiz = data.find((tile) => tile.name === quiz_id);
-      console.log(quiz)
       if (quiz) {
-        console.log(true)
         const sets = quiz.term;
         document.getElementById("options").innerHTML = "";
         for (question_term of sets){
-          console.log(question_term)
           const question_div = document.createElement("div");
           question_div.innerHTML = `<p>${question_term.question}</p><br><input type='text' name="${question_term.answer}">`;
           document.getElementById("options").append(question_div);
-          console.log("done");
         } 
         let +1         
       }
