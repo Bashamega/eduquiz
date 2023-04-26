@@ -24,7 +24,7 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
       console.log(titles)
       let done = 0;
       titles.forEach(title => {
-        if(title.tags = tag){
+        if(title.tags ==tag){
           const div = document.createElement("div")
           div.id = "tile"
           div.innerHTML = `<a href="quiz?${title.name}"<heading>${title.name}</heading><br></a><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button></a>`
