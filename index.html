@@ -72,13 +72,9 @@
               .then(res => res.json())
               .then(data => {
                 if (Array.isArray(data) && data.length > 0) {
-                  const titles = data.map(tile => {
-                    const title_ = tile.name;
-                    const tags_ = tile.tags;
-                    return {
-                      title: title_,
-                      tags: tags_
-                    };
+                  titles = data.map(tile=>{
+                    const title_ = tile.name
+                    return tile;
                   });
                   const slidesDiv = document.getElementById("slides");
                   slidesDiv.innerHTML = "";
