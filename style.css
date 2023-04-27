@@ -19,6 +19,7 @@ nav{
 }
 
 #tile{
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -30,7 +31,7 @@ nav{
     transition-property: transform;
     width: 200px;
     background-color: lightgray;
-    height:150px;
+    height:200px;
     padding: 5px;
     border-radius: 10%;
     margin: 5%;
@@ -56,4 +57,40 @@ nav{
     border: 0;
     text-align: center;
     margin-right: 10px;
+    cursor: pointer;
+}
+#tile .choice button{
+    width:100%;
+
+}
+.choice button{
+    width:100px;
+    margin: 2%;
+    cursor: pointer;
+    
+}
+#points{
+    display: block;
+    position:fixed;
+    top: 0;
+    left: 0;
+    margin-top: 5px;
+    width: 5px;
+    
+    margin-left: 80%;
+    cursor: pointer;
+
+}
+#points span{
+    color: black;
+
+    font-size: 10px;
+    margin-left: 2px;
+    background-color: black;
+    width: 20px;;
+    height:20px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+
 }

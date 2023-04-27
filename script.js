@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
   });
+  
 });
 fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
   .then(res=> res.json())
@@ -54,9 +55,18 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
       titles.forEach(title => {
         const div = document.createElement("div")
         div.id = "tile"
-        div.innerHTML = `<heading>${title.name}</heading><br><br><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="choice"><a href="page?${title.name}"><button>Study</button></a><a href="quiz?${title.name}"><button >Quiz</button></a></div>`
+        div.classList.add(title.tags)
+        
+
+        const name_const  =  encodeURI(title.name)
+        
+        div.innerHTML = `<heading>${title.name}</heading><br><br><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="choice"><a href="page?${title.name}"><button>Study</button></a><a href="quiz?${title.name}"><button >Quiz</button></a></div><div id='points' class ='${title.name}' onclick="sidemenu(${name_const})"><span>o</span><span>0</span><span>o</span></div>`
         document.getElementById('container').append(div)
 
       });
     }
   })
+function sidemenu(string){
+  const name = decodeURI(string)
+  alert(name)
+}
