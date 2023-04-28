@@ -18,7 +18,7 @@ nav{
     margin-left:35%
 }
 
-#tile{
+.tile{
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -42,7 +42,7 @@ nav{
     border: 0;
 
 }
-#tile:hover, .hvr-grow:focus, .hvr-grow:active {
+.tile:hover, .hvr-grow:focus, .hvr-grow:active, .hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
@@ -59,7 +59,7 @@ nav{
     margin-right: 10px;
     cursor: pointer;
 }
-#tile .choice button{
+.tile .choice button{
     width:100%;
 
 }
@@ -95,6 +95,43 @@ nav{
 
 }
 #menu{
-    width:100px;
-    height:200px;
+    position: relative;
+    display: block;
+    transform: translateX(-7px);
+    -webkit-filter: drop-shadow(0 0 6px var(--shadow-2));
+    border-bottom-right-radius: var(--card-corner-radius);
+    background-color: gainsboro;
+    padding: 2px;
+    width: 100px;
+    cursor: default;
+    box-shadow: var(--card-box-shadow);
+
+
+}
+#menu button{
+    width: 100px;
+    border: 0;
+    margin: 0;
+    cursor: pointer;
+    border-bottom: 5px, solid;
+    font-size: 10px;
+}
+#social{
+    background-color: #fff;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 100px;
+    place-items: center;
+    text-align: center;
+    padding-top: 2%;
+    padding: 2%;
+
+}
+#social input{
+    width:100%;
+    margin-bottom: 1%;
+
 }
