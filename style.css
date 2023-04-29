@@ -31,7 +31,7 @@ nav{
     transition-property: transform;
     width: 200px;
     background-color: lightgray;
-    height:200px;
+    height: 95px;
     padding: 5px;
     border-radius: 10%;
     margin: 5%;
@@ -135,3 +135,15 @@ nav{
     margin-bottom: 1%;
 
 }
+.hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 20px #9ecaed;
+}
+.choice{visibility: hidden;}
+.visible .choice{
+    visibility: visible;
+}
+.visible{height:200px;}
