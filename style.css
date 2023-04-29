@@ -128,6 +128,13 @@ nav{
     text-align: center;
     padding-top: 2%;
     padding: 2%;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+    
+    
 
 }
 #social input{
@@ -147,3 +154,18 @@ nav{
     visibility: visible;
 }
 .visible{height:200px;}
+
+
+.blur{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    
+    background-color: #ccc;
+}
+#body{
+    
+    height:100vh;
+}
