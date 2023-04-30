@@ -1,4 +1,4 @@
-import { run, search } from "../data/files/template-part";
+import { run, search } from "https://bashamega.github.io/eduquiz/data/files/template-part.js";
 var tag = 'none';
 if (window.location.href.includes("?")){
   tag = decodeURI(window.location.href.split("?").pop());
@@ -24,7 +24,7 @@ fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
           div.classList.add("tile")
           const name_const = encodeURI(title.name);
           div.id = name_const.replace('%20', '_');
-          div.innerHTML = `<heading id='check'>${title.name}</heading><br><br><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="choice"><a href="page?${title.name}"><button>Study</button></a><a href="quiz?${title.name}"><button >Quiz</button></a></div><div id='points'  class="${name_const} clicker"><span>o</span ><span>0</span><span>o</span></div>`;
+          div.innerHTML = `<heading id='check'>${title.name}</heading><br><br><p id="check">Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="choice"><a href="page?${title.name}"><button>Study</button></a><a href="quiz?${title.name}"><button >Quiz</button></a></div><div id='points'  class="${name_const} clicker"><span>o</span ><span>0</span><span>o</span></div>`;
           document.getElementById("container").append(div);
           div.addEventListener('mouseover', function(){
             div.classList.add('visible')
