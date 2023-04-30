@@ -49,19 +49,39 @@ fetch(json_fetch_url)
 
 function check(){
   if(window.location.href.includes("?")){
-    const id_ = window.location.href.split('?').pop().replace('%20', '_');
-    const element = document.getElementById(id_);
+    const id_ = window.location.href.split('?').pop();
+    const element = document.getElementById(id_.replace('%20', '_'));
     
     if (element) {
 
-      element.classList.add('hover');
-      const tile = document.getElementsByClassName('tile')
-      for( i in tile){
-        tile[i].addEventListener('mouseover', function(){
-          element.classList.remove('hover')
-        })
-      }
       
+      fetch(json_fetch_url)
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          titles = data.map((tile) => {
+            const title_ = tile.name;
+            return tile;
+          });
+          titles.forEach((title) => {
+            if (title.name == decodeURI(id_)){
+              div.innerHTML = `<heading>${title.name}</heading><br><br><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="btn"><a href="page?${title.name}"><button>Study</button></a><a href="quiz?${title.name}"><button >Quiz</button></a></div>`;
+              document.getElementById('body').classList.add('blur');
+              const div = document.createElement('div');
+              div.id ="tile_full"
+              document.body.appendChild(div)
+            }
+
+
+
+          });
+        }
+        check()
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     }
   }
   if(document.getElementById('social')){
