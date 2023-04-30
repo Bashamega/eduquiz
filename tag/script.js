@@ -1,4 +1,5 @@
 import { run, search } from "https://bashamega.github.io/eduquiz/data/files/template-part.js";
+import {json_fetch_url} from 'https://bashamega.github.io/eduquiz/data/files/vars.js'
 var tag = 'none';
 if (window.location.href.includes("?")){
   tag = decodeURI(window.location.href.split("?").pop());
@@ -10,7 +11,7 @@ if (window.location.href.includes("?")){
 }
 
 
-fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
+fetch(json_fetch_url)
   .then(res=> res.json())
   .then(data =>{
     if (Array.isArray(data) && data.length > 0) {

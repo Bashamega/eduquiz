@@ -1,4 +1,5 @@
 import {run, search} from './data/files/template-part.js'
+import {json_fetch_url} from './data/files/vars.js'
 let titles = [];
 document.addEventListener("DOMContentLoaded", function () {
   const inputElement = document.getElementById("search");
@@ -7,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     search(inputElement)
   }) 
 });
-fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
+fetch(json_fetch_url)
   .then((res) => res.json())
   .then((data) => {
     if (Array.isArray(data) && data.length > 0) {
