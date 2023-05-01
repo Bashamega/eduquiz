@@ -65,12 +65,30 @@ function check(){
           });
           titles.forEach((title) => {
             if (title.name == decodeURI(id_)){
-              const tile_hotspot = document.createElement('div');
-              tile_hotspot.innerHTML = `<heading>${title.name}</heading><br><br><p>Tags:   </p><a href="${url}tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="btn"><a href="${url}page?${title.name}"><button>Study</button></a><a href="${url}quiz?${title.name}"><button >Quiz</button></a></div>`;
-              document.getElementById('body').classList.add('blur');
-              
-              tile_hotspot.id ="tile_full"
-              document.body.appendChild(tile_hotspot)
+              const tileHotspot = document.createElement('div');
+              tileHotspot.id = 'tile_full';
+              tileHotspot.innerHTML = `
+                <heading>${title.name}</heading>
+                <br><br>
+                <p>Tags:</p>
+                <a href="${url}tag?${title.tags}">
+                  <button id="tagBtn">${title.tags}</button>
+                </a>
+                <br><br>
+                <div class="btn">
+                  <button class="studyBtn">Study</button>
+                  <button class="quizBtn">Quiz</button>
+                </div>
+              `;
+
+              // Append the tile element to the document body
+              const bodyEl = document.getElementById('body');
+              if (!bodyEl) {
+                console.error('Cannot find element with ID "body"');
+              } else {
+                bodyEl.classList.add('blur');
+                bodyEl.appendChild(tileHotspot);
+              }
             }
 
 
