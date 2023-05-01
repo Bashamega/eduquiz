@@ -7,34 +7,14 @@ function sidemenu(string) {
    
     const div =  document.createElement('div')
     div.id = 'menu'
-    let content = `<a href="https://bashamega.github.io/eduquiz/quiz?${string}"><button>Open</button></a><button id="share">Share</button>`;
+    let content = `<a href="https://bashamega.github.io/eduquiz/quiz?${string}"><button>Quiz</button></a><a href="https://bashamega.github.io/eduquiz/page?${string}"><button>Study</button></a>`;
     div.innerHTML= content
     document.getElementById(string).getElementsByClassName('clicker')[0].appendChild(div);
-    document.getElementById('share').addEventListener('click', function() {
-      share(string)
-    })
+    
   
     
 }
-function share(string){
-    const div = document.createElement('div');
-    div.id = "social";
-    const input = document.createElement('input');
-    input.readOnly = true;
-    input.value = `https://bashamega.github.io/eduquiz/?${string}`;
-    document.body.append(div);
-    document.getElementById('social').appendChild(input);
-    
-  
-    const btn = document.createElement('button')
-    document.getElementById("body").classList.add('blur')
-    btn.innerText ='close'
-    document.getElementById('social').appendChild(btn)
-    btn.addEventListener('click', function(){
-      document.getElementById('social').parentNode.removeChild(document.getElementById('social'))
-      document.getElementById("body").classList.remove('blur')
-    })
-}
+
 export function run(){
   
   for (var i = 0; i < document.getElementsByClassName('clicker').length; i++){

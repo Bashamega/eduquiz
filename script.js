@@ -48,61 +48,7 @@ fetch(json_fetch_url)
   
 
 function check(){
-  if(window.location.href.includes("?")){
-    const id_ = window.location.href.split('?').pop();
-    const element = document.getElementById(id_.replace('%20', '_'));
-    
-    if (element) {
-
-      
-      fetch(json_fetch_url)
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data) && data.length > 0) {
-          titles = data.map((tile) => {
-            const title_ = tile.name;
-            return tile;
-          });
-          titles.forEach((title) => {
-            if (title.name == decodeURI(id_)){
-              const tileHotspot = document.createElement('div');
-              tileHotspot.id = 'tile_full';
-              tileHotspot.innerHTML = `
-                <heading>${title.name}</heading>
-                <br><br>
-                <p>Tags:</p>
-                <a href="${url}tag?${title.tags}">
-                  <button id="tagBtn">${title.tags}</button>
-                </a>
-                <br><br>
-                <div class="btn">
-                  <button class="studyBtn">Study</button>
-                  <button class="quizBtn">Quiz</button>
-                </div>
-              `;
-
-              // Append the tile element to the document body
-              const bodyEl = document.getElementById('body');
-              if (!bodyEl) {
-                console.error('Cannot find element with ID "body"');
-              } else {
-                bodyEl.classList.add('blur');
-                bodyEl.appendChild(tileHotspot);
-              }
-            }
-
-
-
-          });
-        }
-        check()
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    }
-  }
+  
   if(document.getElementById('social')){
     document.getElementById('social').parentNode.removeChild(document.getElementById('social'))
 
