@@ -1,5 +1,5 @@
 import {run, search} from './data/files/template-part.js'
-import {json_fetch_url} from './data/files/vars.js'
+import {json_fetch_url, url} from './data/files/vars.js'
 let titles = [];
 document.addEventListener("DOMContentLoaded", function () {
   const inputElement = document.getElementById("search");
@@ -65,11 +65,12 @@ function check(){
           });
           titles.forEach((title) => {
             if (title.name == decodeURI(id_)){
-              div.innerHTML = `<heading>${title.name}</heading><br><br><p>Tags:   </p><a href="tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="btn"><a href="page?${title.name}"><button>Study</button></a><a href="quiz?${title.name}"><button >Quiz</button></a></div>`;
+              const tile_hotspot = document.createElement('div');
+              tile_hotspot.innerHTML = `<heading>${title.name}</heading><br><br><p>Tags:   </p><a href="${url}tag?${title.tags}"><button id='tag'>${title.tags}</button><Br><br></a><div class="btn"><a href="${url}page?${title.name}"><button>Study</button></a><a href="${url}quiz?${title.name}"><button >Quiz</button></a></div>`;
               document.getElementById('body').classList.add('blur');
-              const div = document.createElement('div');
-              div.id ="tile_full"
-              document.body.appendChild(div)
+              
+              tile_hotspot.id ="tile_full"
+              document.body.appendChild(tile_hotspot)
             }
 
 
