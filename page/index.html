@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title_">Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <script src="main.js"></script>
-  <script src="slide.js"></script>
+  <script src="slide.js" ></script>
   <div id="div"></div>
   <div class="container" id ='container'>
     <div class="slideshow-container" id="slide_container">
       <div id="slides"></div>
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
+      <button class="prev" onclick="prev()">&#10094;</button>
+      <button class="next" onclick="next()">&#10095;</button>
       <style>
         .slideshow-container {
           margin-top: 5%;
@@ -29,8 +28,11 @@
           text-align: center;   
           background-color: lightblue; 
           place-items: center;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease;
           
         }
+        
     
         .prev,
         .next {
