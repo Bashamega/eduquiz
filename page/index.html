@@ -11,20 +11,152 @@
   <script src="main.js"></script>
   <div id="div"></div>
   <div class="container" id ='container'>
-  <div id="title"></div>
-  <div id="options">
-    <table>
-      <thead>
-        <tr>
-          <th>Question</th>
-          <th>Answer</th>
-        </tr>
-      </thead>
-      <tbody id="set_study">
-      </tbody>
-    </table>
-  </div>
-  <br>
+    <div class="slideshow-container" id="slide_container">
+      <div id="slides"></div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+      <style>
+        .slideshow-container {
+          margin-top: 5%;
+          position: relative;
+        }
+    
+        .slide {
+          display: none;
+          width: 100%;
+          height: 200px;
+          text-align: center;   
+          background-color: lightblue; 
+          place-items: center;
+          
+        }
+    
+        .prev,
+        .next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+    
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+    
+        .prev:hover,
+        .next:hover {
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+    
+        .active {
+          display: block;
+        }
+    
+      </style>
+      <script>
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const totalPages = 10;
+        let currentPage = 1;
+
+        function handleNextClick() {
+          currentPage++;
+          if (currentPage === totalPages) {
+            nextBtn.removeEventListener('click', handleNextClick);
+          }else{
+            next()
+          }
+          // do something else
+        }
+
+        function handlePrevClick() {
+          currentPage--;
+          if (currentPage === 1) {
+            prevBtn.removeEventListener('click', handlePrevClick);
+          }else{
+            prev()
+          }
+          // do something else
+        }
+
+        // Attach event listeners
+        nextBtn.addEventListener('click', handleNextClick());
+        prevBtn.addEventListener('click', handlePrevClick());
+
+        let slideIndex = 0;
+    
+        function showSlides() {
+        fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
+          .then(res => res.json())
+          .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+              const quiz = data.find((tile) => tile.name === quiz_id);
+              const slidesDiv = document.getElementById("slides");
+              slidesDiv.innerHTML = "";
+              if (quiz) {
+                const sets = quiz.term;
+                for (question_term of sets){
+                  const div = document.createElement("div");
+                  div.setAttribute("class", "slide");
+
+                  div.innerHTML = `<h1>Question</h1><br><h2>${question_term.question}</h2>`;
+                  slidesDiv.append(div);
+                }
+
+                // Add end slide
+                const endSlide = document.createElement("div");
+                endSlide.setAttribute("class", "slide");
+                endSlide.id ="end"
+                endSlide.innerHTML = "<h1>The End</h1><br><p>Thank you for taking this quiz!</p>";
+                slidesDiv.append(endSlide);
+
+              }
+
+              const slides = slidesDiv.getElementsByClassName("slide");
+              for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {
+                slideIndex = 1;
+              }
+              slides[slideIndex - 1].style.display = "block";
+
+            }
+          });
+      }
+
+
+    
+        showSlides();
+    
+        const prevButton = document.querySelector(".prev");
+        const nextButton = document.querySelector(".next");
+        function next(){
+          slideIndex + 1;
+          showSlides();
+        }
+        function prev(){
+          slideIndex - 1;
+          showSlides()
+        }
+        prevButton.addEventListener("click", prevButton());
+        
+        nextButton.addEventListener("click", nextBtn());
+        const  endslide = document.getElementById('end')
+        
+      </script>
+    </div> 
   </div>
   <script src="main.js"></script>
 
