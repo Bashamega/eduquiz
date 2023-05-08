@@ -1,6 +1,6 @@
 import { run, search } from "https://bashamega.github.io/eduquiz/data/files/template-part.js";
 
-import { url, json_fetch_url} from "../data/files/vars";
+import { url, json_fetch_url} from "https://bashamega.github.io/eduquiz/data/files/vars.js";
 var tag = 'none';
 if (window.location.href.includes("?")){
   tag = decodeURI(window.location.href.split("?").pop());

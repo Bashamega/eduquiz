@@ -7,7 +7,8 @@ function sidemenu(string) {
    
     const div =  document.createElement('div')
     div.id = 'menu'
-    let content = `<a href="https://bashamega.github.io/eduquiz/quiz?${string}"><button>Quiz</button></a><a href="https://bashamega.github.io/eduquiz/page?${string}"><button>Study</button></a>`;
+    const name = string.replace('_', " ")
+    let content = `<a href="https://bashamega.github.io/eduquiz/quiz?${string}"><button>Quiz</button></a><a href="https://bashamega.github.io/eduquiz/page?${name}"><button>Study</button></a>`;
     div.innerHTML= content
     document.getElementById(string).getElementsByClassName('clicker')[0].appendChild(div);
     
