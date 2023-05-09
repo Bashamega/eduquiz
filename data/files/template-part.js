@@ -42,7 +42,7 @@ export function search(inputElement){
 
   document.querySelector("nav").append(drop);
   let mydata;
-  fetch("data/quiz/tiles.json")
+  fetch("https://bashamega.github.io/eduquiz/data/quiz/tiles.json")
     .then((res) => res.json())
     .then((data) => {
       if (Array.isArray(data) && data.length > 0) {
