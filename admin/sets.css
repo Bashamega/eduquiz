@@ -1,0 +1,31 @@
+#quiz_maker{
+    margin-left: 25%;
+    width:50%;
+    margin-top: 5%;
+    background-color: gainsboro;
+    padding: 5%;
+    border-radius: 10%;
+}
+#sets{
+    margin-top: 5%;
+}
+#spacer{
+    width:1px;
+    background-color: black;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+body{position: relative;}
+#quiz_maker span{color: red;}
+#error-message{
+    padding: 1em;
+    max-width: 50ch;
+    border: 0;
+    box-shadow: 0 0 1em rgba(187, 59, 59, 0.3);
+    background-color: rgba(235, 0, 0, 0.5);
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    border-radius: 20%;
+    transform: translate(-50%, -50%);
+}
