@@ -66,9 +66,9 @@ function create(){
     
         const url = 'https://bashamega.github.io/eduquiz/data/quiz/tiles.json';
         const apiUrl = url;
-        
+
         // Read in the existing data from the file
-        axios.get('https://bashamega.github.io/eduquiz/data/quiz/tiles.json')
+        axios.get(url)
         .then(response => {
         const data = response.data;
 
@@ -76,18 +76,21 @@ function create(){
         data.push(newData);
 
         // Write the updated data back to the file
-        axios.post('https://bashamega.github.io/eduquiz/data/quiz/tiles.json', data)
-            .then(response => {
+        axios.post(url, data, {
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
             message_correct('Data added successfully.');
-            })
-            .catch(error => {
+        })
+        .catch(error => {
             message_error('Error adding data.', error);
-            });
+        });
         })
         .catch(error => {
         message_error('Error reading data.', error);
         });
-
 
     }else{
         message_error("At least 3 terms")
