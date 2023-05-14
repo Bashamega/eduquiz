@@ -57,7 +57,7 @@ function create(){
         };
         const title = document.getElementById('quiz_title').value
         const tag = document.getElementById("quiz_tags").value
-        const data = {
+        const newData = {
             name: title,
             tags: tag,
             lang: "en",
@@ -81,11 +81,11 @@ function create(){
             message_correct('Data added successfully.');
             })
             .catch(error => {
-            message_error('Error adding data:', error);
+            message_error('Error adding data.', error);
             });
         })
         .catch(error => {
-        message_error('Error reading data:', error);
+        message_error('Error reading data.', error);
         });
 
 
