@@ -66,13 +66,13 @@ function create(){
     
         const url = '../data/quiz/tiles.json';
         const apiUrl = url;
-
+        
         axios.post(apiUrl, data)
             .then(response => {
                 message_correct(`Operation completed <br> <input value="https://bashamega.github.io/eduquiz/profile/${title}" `)
                 console.log(response.data)
             })
-            .catch(error => {message_error('Error occured. Please try Again'); console.log(error)});
+            .catch(error => {message_error('Error occured. Please try Again'); console.log(error)});        
 
     }else{
         message_error("At least 3 terms")
