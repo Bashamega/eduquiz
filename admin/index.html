@@ -25,7 +25,7 @@
     <!--Admin dashboard-->
     <div id="admin_dashboard">
         <nav>
-            <div id="options"></div>
+            <div id="options"><h2 style="text-align: center;" onclick="view()">View Code</h2></div>
             <div id="name"></div>
         </nav>
         <div id="content_admin">
@@ -51,6 +51,13 @@
             <h2>Error</h2>
             <p id="error"></p>
             <button id="close_dialog">Close</button>
+            
+        </dialog>
+        <dialog id="correct-message">
+            
+            <h2>Error</h2>
+            <p id="error"></p>
+            <button id="close_dialog_">Close</button>
             
         </dialog>
         <!--Quiz-->
@@ -115,14 +122,20 @@
             <button onclick="create()">Create</button>
             
         </div>
-        </div>
         
+        <!--View source-->
+        <div id="api_verfication">
+            
+        </div>
+        </div>
         
         
 
     </div>
     <script src="admin.js" type="module"></script>
     <script src="quizmaker.js"></script>
-    
+    <script src="view.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

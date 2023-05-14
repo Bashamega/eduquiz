@@ -1,25 +1,4 @@
 
-function quiz(){
-    if(window.location.href.includes('?')){
-        if(window.location.href.split("?").pop() ==""){
-            
-        }else{
-            document.getElementById("content_admin").parentNode.removeChild(document.getElementById("content_admin"))
-            
-            const name = window.location.href.split("?").pop().replace("+", " ").split("=").pop()
-
-            document.getElementById('quiz_maker').style.visibility = 'visible'
-            document.getElementById('quiz_title').value = name 
-            document.getElementById('quiz_title').setAttribute("readonly", "readonly")
-
-        }
-        
-        
-        
-        
-
-    }   
-}
 
 function message_error(string){
     const close = document.getElementById('close_dialog')
@@ -27,6 +6,15 @@ function message_error(string){
           modal.close()
         })
     const modal = document.getElementById('error-message')
+    modal.showModal()
+    document.getElementById('error').innerHTML = string
+}
+function message_correct(string){
+    const close = document.getElementById('close_dialog_')
+        close.addEventListener('click', function(){
+          modal.close()
+        })
+    const modal = document.getElementById('correct-message')
     modal.showModal()
     document.getElementById('error').innerHTML = string
 }
@@ -69,31 +57,24 @@ function create(){
         };
         const title = document.getElementById('quiz_title').value
         const tag = document.getElementById("quiz_tags").value
-        // Data to be sent to JSON file
         const data = {
-        "name": title,
-        "tags": tag,
-        "lang": "en",
-        "term": terms
+            name: title,
+            tags: tag,
+            lang: "en",
+            term: terms,
         };
+    
+        const url = 'https://raw.githubusercontent.com/bashamega/eduquiz/main/data/quiz/tiles.json';
+        const apiUrl = url;
 
-                    
-        // Request options
-        const options = {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        };
-        
-        // Send data to JSON file using Fetch API
-        fetch('https://bashamega.github.io/eduquiz/data/quiz/tiles.json', options)
-            .then(response => response.json())
-            .then(json => console.log(json))
-            .catch(error => {message_error("Database error. <br> " + error)});        
-        
+        axios.post(apiUrl, data)
+            .then(response => {
+                message_correct(`Operation completed <br> <input value="https://bashamega.github.io/eduquiz/profile/${title}" `)
+                console.log(response.data)
+            })
+            .catch(error => {message_error('Error occured. Please try Again'); console.log(error)});
+
     }else{
-        stop()
+        message_error("At least 3 terms")
     }
 }

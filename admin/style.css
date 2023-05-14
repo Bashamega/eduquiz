@@ -17,6 +17,11 @@ input, label, button{
     width: 100%;
     font-size: 20px;
 }
+#dialog{
+    margin:25%;
+    width:50%;
+    height:50%;
+}
 button{margin-top: 5%;}
 nav{
     -webkit-font-smoothing: subpixel-antialiased;
@@ -61,7 +66,7 @@ nav{
     padding: 1%;
     background-color: lightcyan;
 }
-#quiz_maker{
+#quiz_maker, #viewsource, #api_verfication{
     visibility: hidden;;
 }
 
@@ -74,4 +79,4 @@ nav{
     margin-bottom: 2%;
 }
 
-.material-symbols-outlined{cursor: pointer;}
+.material-symbols-outlined, #options h2{cursor: pointer;}
