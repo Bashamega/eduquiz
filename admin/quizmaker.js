@@ -67,12 +67,27 @@ function create(){
         const url = '../data/quiz/tiles.json';
         const apiUrl = url;
         
-        axios.post(apiUrl, data)
+        // Read in the existing data from the file
+        axios.get('../data/quiz/tiles.json')
+        .then(response => {
+        const data = response.data;
+
+        // Add the new data to the existing data
+        data.push(newData);
+
+        // Write the updated data back to the file
+        axios.post('https://bashamega.github.io/eduquiz/data/quiz/tiles.json', data)
             .then(response => {
-                message_correct(`Operation completed <br> <input value="https://bashamega.github.io/eduquiz/profile/${title}" `)
-                console.log(response.data)
+            message_correct('Data added successfully.');
             })
-            .catch(error => {message_error('Error occured. Please try Again'); console.log(error)});        
+            .catch(error => {
+            message_error('Error adding data:', error);
+            });
+        })
+        .catch(error => {
+        message_error('Error reading data:', error);
+        });
+
 
     }else{
         message_error("At least 3 terms")
