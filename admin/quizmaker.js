@@ -64,7 +64,7 @@ function create(){
             term: terms,
         };
     
-        const url = 'https://raw.githubusercontent.com/bashamega/eduquiz/main/data/quiz/tiles.json';
+        const url = '../data/quiz/tiles.json';
         const apiUrl = url;
 
         axios.post(apiUrl, data)
