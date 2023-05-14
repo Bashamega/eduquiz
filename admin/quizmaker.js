@@ -64,11 +64,11 @@ function create(){
             term: terms,
         };
     
-        const url = '../data/quiz/tiles.json';
+        const url = 'https://bashamega.github.io/eduquiz/data/quiz/tiles.json';
         const apiUrl = url;
         
         // Read in the existing data from the file
-        axios.get('../data/quiz/tiles.json')
+        axios.get('https://bashamega.github.io/eduquiz/data/quiz/tiles.json')
         .then(response => {
         const data = response.data;
 
