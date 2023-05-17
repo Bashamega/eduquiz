@@ -1,4 +1,13 @@
+
 function sidemenu(string) {
+    if(!document.getElementById('close_icon_google')){
+      var head = document.getElementsByTagName('head')[0]
+      var link = document.createElement('link')
+      link.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+      link.rel = "stylesheet"
+      link.id = "close_icon_google"
+      head.append(link)
+    }
     const name_decoded = decodeURI(string);
     if(document.getElementById('menu')){
       document.getElementById('menu').parentNode.removeChild(document.getElementById('menu'))
@@ -8,9 +17,14 @@ function sidemenu(string) {
     const div =  document.createElement('div')
     div.id = 'menu'
     const name = string.replace('_', " ")
-    let content = `<a href="https://bashamega.github.io/eduquiz/quiz?${string}"><button>Quiz</button></a><a href="https://bashamega.github.io/eduquiz/page?${name}"><button>Study</button></a>`;
+    let content = `
+    
+    <a href="${window.location.href}"><div class="material-symbols-outlined" id="close_menu_sidemenu"  onclick="close_menu_bar()">close</div><a>
+    <a href="https://bashamega.github.io/eduquiz/quiz?${string}"><button>Quiz</button></a>
+    <a href="https://bashamega.github.io/eduquiz/page?${name}"><button>Study</button></a>`;
     div.innerHTML= content
     document.getElementById(string).getElementsByClassName('clicker')[0].appendChild(div);
+    
     
   
     
