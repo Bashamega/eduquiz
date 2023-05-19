@@ -66,20 +66,33 @@ function latest(){
         message_error('Error Loading')
     });
 }
+function default_adminview(){
+  latest()
+  document.getElementById('quiz_maker').parentNode.removeChild(document.getElementById('quiz_maker'))
+  document.getElementById('viewsource').parentNode.removeChild(document.getElementById('viewsource'))
+}
 function check(){
     if(window.location.href.includes('?')){
         if(window.location.href.split("?").pop() ==""){
-            document.getElementById('quiz_maker').parentNode.removeChild(document.getElementById('quiz_maker'))
-            document.getElementById('viewsource').parentNode.removeChild(document.getElementById('viewsource'))
-            latest()
+            default_adminview()
             
         }else{
-          
+         if(window.location.href.split("?").pop().includes("Title=")){
           document.getElementById("content_admin").parentNode.removeChild(document.getElementById("content_admin"))
           const name = window.location.href.split("?").pop().replace(/\+/g, " ").split("=").pop();
           document.getElementById('quiz_maker').style.visibility = 'visible'
           document.getElementById('quiz_title').value = name 
           document.getElementById('quiz_title').setAttribute("readonly", "readonly")
+         }
+         else{
+          if (window.location.split("?").pop() = "view_source_code_api_key") {
+            window.location.href="https://github.com/Bashamega/eduquiz"
+          } else {
+            default_adminview()
+          }
+          
+         }
+          
           
 
         }
@@ -89,9 +102,7 @@ function check(){
         
 
     }else{
-        latest()
-        document.getElementById('quiz_maker').parentNode.removeChild(document.getElementById('quiz_maker'))
-        document.getElementById('viewsource').parentNode.removeChild(document.getElementById('viewsource'))
+        default_adminview()
         
     }
 }
